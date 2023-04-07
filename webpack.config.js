@@ -1,6 +1,10 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 module.exports = {
   mode: "development",
@@ -17,6 +21,12 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({ template: "./src/index.html" }),
     new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new webpack.DefinePlugin({
+      'process.env.REACT_APP_BASE_ADDRESS': JSON.stringify(process.env.REACT_APP_BASE_ADDRESS)
+   })
   ],
   module: {
     rules: [

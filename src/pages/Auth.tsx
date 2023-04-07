@@ -1,12 +1,15 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import Header from "../components/Header";
-import Form from "../components/Form";
+import Login from "../components/Login";
+import Signup from "../components/Signup";
 
 const Auth: FC = () => {
+  const [login, setLogin] = useState(false);
+
   return (
     <div>
-      <Header />
-      <Form />
+      <Header setLogin={setLogin}/>
+      {login ? <Login /> : <Signup />}
     </div>
   );
 };
