@@ -1,7 +1,7 @@
 import Form from "../Form";
 import { useNavigate } from "react-router-dom";
 import { fetchRegister } from "../../redux/thunk/fetchUser";
-import { useAppDispatch, useAppSelector } from "../utils/utils";
+import { useAppDispatch, useAppSelector } from "../../utils/utils";
 import { useEffect, useState } from "react";
 
 const Signup = () => {

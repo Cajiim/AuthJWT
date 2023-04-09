@@ -5,7 +5,7 @@ const useAuth = () => {
   const { accessToken } = useAppSelector(({ user }) => user);
   
   const parse = accessToken ? parseToken(accessToken) : '';
-  
+  console.log(parse, 'parse');
   return {
     
   };

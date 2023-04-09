@@ -1,6 +1,6 @@
 import Form from "../Form";
 import { fetchLogin } from '../../redux/thunk/fetchUser';
-import { useAppDispatch } from "../utils/utils";
+import { useAppDispatch } from "../../utils/utils";
 
 const Login = () => {
   const dispatch = useAppDispatch();

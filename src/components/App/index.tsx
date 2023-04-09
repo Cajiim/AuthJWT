@@ -3,10 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Auth from "../../pages/Auth";
 import Main from "../../pages/Main";
+import useAuth from '../../hooks/useAuth';
 
 import "./index.scss";
 
 const App: FC = () => {
+  const auth = useAuth();
+
   return (
     <Router>
       <Routes>
