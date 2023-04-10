@@ -1,29 +1,46 @@
 import { FC, Dispatch, SetStateAction } from "react";
+
+import { useAppSelector, useAppDispatch } from "../../utils/utils";
+import { logout } from "../../redux/reducers/reducerUser";
+
 import "./index.scss";
 
 type THeader = {
   isAuth?: boolean;
-  setLogin: Dispatch<SetStateAction<boolean>>;
+  setIsLogin: Dispatch<SetStateAction<boolean>>;
 };
 
-const Header: FC<THeader> = ({ isAuth = false, setLogin }) => {
+const Header: FC<THeader> = ({ setIsLogin }) => {
+  const dispatch = useAppDispatch();
+  const { isAuth } = useAppSelector(({ user }) => user);
+
   return (
     <header className="header">
       {isAuth ? (
-        <button className="header__item">Logout</button>
+        <button
+          className="header__item"
+          type="button"
+          onClick={() => {
+            localStorage.removeItem("accessToken");
+            localStorage.removeItem("refreshToken");
+            dispatch(logout());
+          }}
+        >
+          Logout
+        </button>
       ) : (
         <>
           <button
             className="header__item"
             type="button"
-            onClick={() => setLogin(false)}
+            onClick={() => setIsLogin(false)}
           >
             Sign up
           </button>
           <button
             className="header__item"
             type="button"
-            onClick={() => setLogin(true)}
+            onClick={() => setIsLogin(true)}
           >
             Log in
           </button>

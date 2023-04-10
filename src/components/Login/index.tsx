@@ -1,5 +1,5 @@
 import Form from "../Form";
-import { fetchLogin } from '../../redux/thunk/fetchUser';
+import { fetchLogin } from "../../redux/thunk/fetchUser";
 import { useAppDispatch } from "../../utils/utils";
 
 const Login = () => {
@@ -7,10 +7,11 @@ const Login = () => {
 
   const handlLogin = (email: string, password: string) => {
     const objHeaders = {
-      email: email,
+      username: email,
       password: password,
-      fingerprint: 'fingerprint',
-    }
+      fingerprint: "finger",
+    };
+
     dispatch(fetchLogin(objHeaders));
   };
 

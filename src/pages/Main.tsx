@@ -4,7 +4,7 @@ import Header from "../components/Header";
 const Main: FC = () => {
   return (
     <div>
-      <Header />
+      <Header setIsLogin={() => {}}/>
       <p>Авторизован</p>
     </div>
   );
