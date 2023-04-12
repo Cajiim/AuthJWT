@@ -3,8 +3,12 @@
   flex-direction: column;
   align-items: center;
 
-  &__input{
-    outline:none;
+  &__input {
+    outline: none;
     padding: 0 0 0 10px;
+  }
+
+  &__button {
+    margin: 10px 0 0 0;
   }
 }
