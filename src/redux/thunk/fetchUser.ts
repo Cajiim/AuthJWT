@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { authRegister, authLogin } from "../../api/Auth";
 
-type TUser = {
+export type TUser = {
   username: string;
   password: string;
   fingerprint: string;
